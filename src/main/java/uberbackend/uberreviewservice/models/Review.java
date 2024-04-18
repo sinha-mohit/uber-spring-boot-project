@@ -16,11 +16,12 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity // java layer level
 @Table(name = "booking_review") // database level
-public class Review extends BaseModel{
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Review extends BaseModel {
     @Column(nullable = false)
-    private String content;
+    protected String content;
 
-    private Double rating;
+    protected Double rating;
 
     @Override
     public String toString() {
