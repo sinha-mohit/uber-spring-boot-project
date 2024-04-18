@@ -25,26 +25,26 @@ public class ReviewService implements CommandLineRunner {
     public void run(String... args) throws Exception {
         System.out.println("********CommandLineRunner********");
 
-        Review review = Review // id, createdAt and updatedAt are automatically handled by spring boot
-                .builder()
-                .content("Bad ride quality")
-                .rating(1.0)
-                .build(); // code to create plain java object
-
-        reviewRepository.save(review); // this executes sql queries
-
-        Booking booking = Booking
-                        .builder()
-                        .review(review)
-                        .endTime(new Date())
-                        .build();
-
-        bookingRepository.save(booking);
-
-
-        List<Review> reviewList = reviewRepository.findAll();
-        for(Review r : reviewList) {
-            System.out.println(r.toString());
-        }
+//        Review review = Review // id, createdAt and updatedAt are automatically handled by spring boot
+//                .builder()
+//                .content("Bad ride quality")
+//                .rating(1.0)
+//                .build(); // code to create plain java object
+//
+//        reviewRepository.save(review); // this executes sql queries
+//
+//        Booking booking = Booking
+//                        .builder()
+//                        .review(review)
+//                        .endTime(new Date())
+//                        .build();
+//
+//        bookingRepository.save(booking);
+//
+//
+//        List<Review> reviewList = reviewRepository.findAll();
+//        for(Review r : reviewList) {
+//            System.out.println(r.toString());
+//        }
     }
 }
