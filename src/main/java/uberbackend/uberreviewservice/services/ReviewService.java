@@ -4,8 +4,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 import uberbackend.uberreviewservice.models.Review;
 import uberbackend.uberreviewservice.repositories.ReviewRepository;
-
-import java.util.Date;
 import java.util.List;
 
 @Service
