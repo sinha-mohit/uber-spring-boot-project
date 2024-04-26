@@ -3,6 +3,7 @@ package uberbackend.uberreviewservice.services;
 import ch.qos.logback.core.net.SyslogOutputStream;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
+import uberbackend.uberreviewservice.custom.CustomDriver;
 import uberbackend.uberreviewservice.models.*;
 import uberbackend.uberreviewservice.repositories.BookingRepository;
 import uberbackend.uberreviewservice.repositories.DriverRepository;
@@ -91,6 +92,11 @@ public class ReviewService implements CommandLineRunner {
             System.out.println(driver_3.get().toString());
             System.out.println(driver_3.get().getLicenseNumber());
             System.out.println(driver_3.get().getName());
+        }
+
+        CustomDriver customDriver = driverRepository.hqlFindLicenseAndId("DL98765", 1L);
+        if (customDriver != null) {
+            System.out.println(customDriver.toString());
         }
     }
 }

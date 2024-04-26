@@ -3,6 +3,7 @@ package uberbackend.uberreviewservice.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import uberbackend.uberreviewservice.custom.CustomDriver;
 import uberbackend.uberreviewservice.models.Driver;
 
 import java.util.Optional;
@@ -21,4 +22,8 @@ public interface DriverRepository extends JpaRepository<Driver, Long> {
     // error is thrown at compile time
     @Query("SELECT d FROM Driver as d WHERE d.licenseNumber = :license AND d.id = :id")
     Optional<Driver> hqlFindByIdAndLicenseNumber(Long id, String license);
+
+    // Converting to custom class, so Driver Entity/class is automatically converted into custom driver using Hibernate/JPA
+    @Query("SELECT new uberbackend.uberreviewservice.custom.CustomDriver(d.id, d.name) FROM Driver d WHERE d.licenseNumber = :license AND d.id = :id")
+    CustomDriver hqlFindLicenseAndId(String license, Long id);
 }
