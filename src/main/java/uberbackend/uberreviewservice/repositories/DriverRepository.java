@@ -6,10 +6,15 @@ import org.springframework.stereotype.Repository;
 import uberbackend.uberreviewservice.custom.CustomDriver;
 import uberbackend.uberreviewservice.models.Driver;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
 public interface DriverRepository extends JpaRepository<Driver, Long> {
+
+    Optional<Driver> findDriverById(Long id);
+
+    List<Driver> findAllDriversByIdIn(List<Long> ids);
 
     Optional<Driver> findByIdAndLicenseNumber(Long id, String licenseNumber);
 
