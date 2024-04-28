@@ -25,6 +25,10 @@ public class Driver extends BaseModel {
     @Column(nullable = false, unique = true)
     private String licenseNumber;
 
+    private String phoneNumber;
+
+    private String email;
+
     // 1:N -> Driver : Bookings -> Driver has many bookings, booking belongs to a driver
     @OneToMany(mappedBy = "driver", fetch = FetchType.LAZY) // so one to many relationship is mapped by driver property on the other side that is booking class having driver property
     @Fetch(FetchMode.SUBSELECT) // to prevent N+1 problem

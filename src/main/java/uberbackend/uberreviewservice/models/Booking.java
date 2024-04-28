@@ -18,7 +18,7 @@ public class Booking extends BaseModel {
     @OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
     private Review review; // we have added a 1:1 relationship between booking and review
 
-    @Enumerated(value = EnumType.STRING) // store as string in database
+    @Enumerated(value = EnumType.STRING) // store as string in database (but flyway migration showing error so storing as ENUM in msql db, see in flyway migration)
     private BookingStatus bookingStatus;
 
     @Temporal(TemporalType.TIMESTAMP)
