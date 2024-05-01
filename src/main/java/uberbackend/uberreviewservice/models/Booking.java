@@ -29,7 +29,6 @@ public class Booking extends BaseModel {
 
     private Long totalDistance;
 
-
     @ManyToOne(fetch = FetchType.LAZY) // A booking has 1 driver but not 1:1 // N:1 (reverse here of 1:N of Driver) not 1:1 // Like many different different bookings can have the same driver, so it is not UNI but MUL
     private Driver driver;
 

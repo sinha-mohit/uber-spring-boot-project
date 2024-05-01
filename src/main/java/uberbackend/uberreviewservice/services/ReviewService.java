@@ -201,6 +201,6 @@ public class ReviewService implements CommandLineRunner {
     public void run(String... args) throws Exception {
         System.out.println("********CommandLineRunner********");
         loadData();
-        fetchData();
+//        fetchData();
     }
 }

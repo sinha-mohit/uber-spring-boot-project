@@ -22,6 +22,9 @@ public class Review extends BaseModel {
     protected String content;
 
     protected Double rating;
+
+//    @OneToOne // Doubt? Is this should be present since it is 1:1 mapping in Booking table?? Ans: No for now as 1:1 mapping can exit anywhere
+//    protected Booking booking;
 }
 
 // new review (content, rating) so id, createdAt and updatedAt should be handled automatically
